@@ -94,3 +94,5 @@ import os
 print [d for d in os.listdir('.')] #列出当前目录下所有目录及文件
 print [k + '=' + str(v) for k, v in kw.iteritems()]
 print [l.lower() for l in L]
+
+M = ['Hello', 'World', 18, 'Apple', None]
