@@ -96,3 +96,30 @@ print [k + '=' + str(v) for k, v in kw.iteritems()]
 print [l.lower() for l in L]
 
 M = ['Hello', 'World', 18, 'Apple', None]
+print [m for m in M]
+print [m.lower() for m in M if isinstance(m, str)]
+
+# 生成器(generator)
+g = (x * x for x in range(1, 5))
+print g.next()
+for n in g: # g也是可迭代对象
+    print n
+
+def fib(max):
+    n, a, b= 0, 0, 1
+    while n < max:
+        print b
+        # c = b
+        # b = b + a
+        # a = c
+        a, b= b, b + a
+        n = n + 1
+fib(6)
+
+def gfib(max):
+    n, a, b= 0, 0, 1
+    while n < max:
+        yield b
+        a, b= b, b + a
+        n = n + 1
+print gfib(6)
